@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    </head>
+    <body>
+        <h1>Diagnostyka i przechwytywanie wyjątków</h1>
+        <table>
+            <tr>
+                <td id="diagnostyka">Data zdarzenia</td>
+                <td id="diagnostyka" th:text="${timestamp}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">URL</td>
+                <td id="diagnostyka" th:text="${path}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">Błąd</td>
+                <td id="diagnostyka" th:text="${error}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">Status</td>
+                <td id="diagnostyka" th:text="${status}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">Szczegóły</td>
+                <td id="diagnostyka" th:text="${message}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">Wyjątek</td>
+                <td id="diagnostyka" th:text="${exception}"/>
+            </tr>
+            <tr>
+                <td id="diagnostyka">Stack trace</td>
+                <td id="diagnostyka">
+                    <pre th:text="${trace}"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

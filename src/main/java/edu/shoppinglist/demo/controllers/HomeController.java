@@ -18,6 +18,8 @@ public class HomeController {
         model.addAttribute("appName", appName);
         return "home";
     }
+    @GetMapping("/add")
+    public String showAddPage() {
+        return "add";
+    }
 }
-
-
