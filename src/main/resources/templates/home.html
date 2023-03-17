@@ -1,10 +1,37 @@
 <html>
-<head>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <title>ShopplingListDemo</title></head>
-<body>
-<h1>Cześć</h1>
-<p>Strona główna: <span th:text="${appName}">ListDemo</span></p>
-<a th:href="@{/add}">Dodaj listę</a>
+    <head>
+        <title th:text="${appFullName}"></title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div style="background: rgb(253, 204, 164);width: 100%;height: auto;text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: x-large; font-weight: bolder">
+            Planowanie zakupów z wyprzedzeniem</br>jako klucz do strategii.</br></br><span style="text-decoration: underline;" th:text="${appFullName}"></span>
+        </div>
+        <div style="width: 100%; display: table;">
+            <div style="display: table-row">
+                <div style="width: 75%; display: table-cell; padding-top: 50px; padding-left: 50px; padding-right: 50px; padding-bottom: 50px; background: rgb(255, 247, 231); text-align: justify;">
+                    <h3 style="text-align: center">Dlaczego warto robić zakupy z listą? </h3>
+                    </br>
+                    Robienie zakupów z listą ma wiele zalet. Dzięki jej sporządzeniu nie będziesz chaotycznie biegać między rozproszonymi półkami, tylko skoncentrujesz się na potrzebnych produktach, które zostały spisane. Nawet jeśli coś rozproszy cię w trakcie kupowania, bez problemu wrócisz do tego, co masz zapisane na liście. Lista zakupów to oszczędność. Zarówno czasu – bo nie zastanawiasz się, czy masz wszystkie potrzebne rzeczy i nie wracasz po raz kolejny do miejsca, w którym już byłeś, jak i pieniędzy. Lista zakupów jest również doskonałym rozwiązaniem dla osób, które po wyjściu z marketu mają zwyczaj narzekać na zbyt duże wydatki z powodu nieplanowanych towarów. Jeśli będziesz konsekwentnie przestrzegać starannie przygotowanej listy zakupów na tydzień, zmniejszysz swoje koszty. Jak się bowiem okazuje, najwięcej nadpłaca się za podstawowe zakupy spożywcze robione pod wpływem chwili. Dzięki liście zakupów — kupujesz bowiem to, czego naprawdę potrzebujesz, mniej czasu poświęcając promocjom i rabatom, Dzięki liście zakupów nie masz ani niedosytu, ani wyrzutów sumienia z powodu kupienia zbyt wielu niezdrowych produktów. Po trzecie, fakt posiadania listy zakupów uspokaja i pozwala na spokojne, bezstresowe zakupy :)
+                    </br>
+                    <center>
+                        <div>
+                            <img th:src="@{/images/image1.png}" id="foto" alt="foto1">
+                            <img th:src="@{/images/image2.png}" id="foto" alt="foto2">
+                            <img th:src="@{/images/image3.png}" id="foto" alt="foto3">
+                        </div>
+                    </center>
+                </div>
+                <div style="display: table-cell; width: 25%; padding-top:50px; padding-left: 50px; padding-right: 50px; background: rgb(192, 208, 217); text-align: justify;">
+                    <h3 style="text-align: center">Kliknij aby przejść do <a th:href="@{/add}">tworzenia listy</a></h3>
+                    </br>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: small; background: rgb(253, 204, 164);">
+            Wykonanie 2023 Anna Drobek & Radosław Biereta
+        </div>
+    </footer>
 </body>
 </html>
