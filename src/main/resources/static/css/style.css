@@ -1,8 +1,32 @@
-body {
-    background-color: lightblue;
+#glowa {
+    
+}
+footer {
+    background: rgb(230, 154, 88);
+    max-width:120vw;
+    max-height: 10vh;
+    clear: both;
+}
+#foto {
+    max-width: 40vw;
+    max-height: 40vh;
 }
 #diagnostyka {
     vertical-align:top;
     border:solid 1px #888;
     padding:10px;
+}
+#left {
+    border: 1px solid red;
+    height: 500px;
+    float: left;
+    width: 45%;
+    text-align: justify;
+}
+#right {
+    border: 1px dotted blue;
+    height: 500px;
+    float: right;
+    width: 45%;
+    text-align: justify;
 }
