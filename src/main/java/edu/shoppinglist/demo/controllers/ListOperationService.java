@@ -6,13 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import edu.shoppinglist.demo.merchandise.ShoppingList;
 import edu.shoppinglist.demo.repositories.ListsRepository;
+import edu.shoppinglist.demo.repositories.ListRepositoryName;
 import java.util.Date;
+import java.util.Iterator;
 
 @Service
 public class ListOperationService {
 
     @Autowired
     ListsRepository repo;
+    ListRepositoryName reponame;
 
     public List<ShoppingList> getAllLists() {
         List<ShoppingList> lists = new ArrayList<>();
@@ -28,6 +31,21 @@ public class ListOperationService {
         list.setCreationDate(new Date());
         list.setModifyDate(new Date());
         repo.save(list);
+    }
+
+    public boolean create(String name) {
+        boolean status = false;
+        ShoppingList list = new ShoppingList();
+        list.setName(name);
+        list.setCreationDate(new Date());
+        list.setModifyDate(new Date());
+        long items_before = repo.count();
+        repo.save(list);
+        long items_after = repo.count();
+        if (items_after > items_before) {
+            status = true;
+        }
+        return status;
     }
 
     public void delete(int id) {
