@@ -5,15 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "lists")
-public class List {
+public class ShoppingList {
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer id;
   private String name;
-  private int count;
+  private Date creationDate;
+  private Date modifyDate;
 
   public Integer getId() {
     return id;
@@ -31,11 +33,19 @@ public class List {
     this.name = name;
   }
 
-  public int getCount() {
-    return count;
+  public Date getCreationDate() {
+    return creationDate;
   }
 
-  public void setCount(int count) {
-    this.count = count;
+  public void setCreationDate(Date creationDate) {
+    this.creationDate = creationDate;
+  }
+  
+  public Date getModifyDate() {
+    return modifyDate;
+  }
+
+  public void setModifyDate(Date modifyDate) {
+    this.modifyDate = modifyDate;
   }
 }

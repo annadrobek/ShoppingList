@@ -3,6 +3,7 @@
         <title th:text="${appFullName}"></title>
         <link rel="stylesheet" th:href="@{/css/style.css}" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
         <div style="background: rgb(253, 204, 164);width: 100%;height: auto;text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: x-large; font-weight: bolder">
@@ -24,7 +25,8 @@
                     </center>
                 </div>
                 <div style="display: table-cell; width: 25%; padding-top:50px; padding-left: 50px; padding-right: 50px; background: rgb(192, 208, 217); text-align: justify;">
-                    <h3 style="text-align: center">Kliknij aby przejść do <a th:href="@{/add}">tworzenia listy</a></h3>
+                    <h4 style="text-align: center">Kliknij aby przejść do <a th:href="@{/add}">tworzenia listy</a></h4>
+                    <h4 style="text-align: center">Kliknij aby przejść do <a th:href="@{/listsManager}">zarządzania listami</a></h4>
                     </br>
                 </div>
             </div>

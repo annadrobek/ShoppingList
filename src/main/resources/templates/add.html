@@ -1,18 +1,30 @@
 <html>
     <head>
         <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <title th:text="${addlistName}"></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
         <div style="background: rgb(253, 204, 164);width: 100%;height: auto;text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: x-large; font-weight: bolder">
             Planowanie zakupów z wyprzedzeniem</br>jako klucz do strategii.</br></br><span style="text-decoration: underline;" th:text="${appFullName}"></span>
         </div>
-        <div>
-            <form action="#" th:action="@{/add}" th:object="${list}" method="post">
-                <label for="name">Nazwa</label>
-                <input type="text" th:field="*{name}" id="name" placeholder="Nazwa">
-                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-                <input type="submit" value="Add Item">   
+        <div align="center">
+            <h1>Stwórz listę</h1>
+            <h4>podaj nazwę</h4>
+            <br />
+            <form action="#" th:action="@{/save}" th:object="${list}"
+                  method="post">
+                <table border="0" cellpadding="10">
+                    <tr>
+                        <td>Nazwa:</td>
+                        <td><input type="text" th:field="*{name}" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><center><button type="submit">Zapisz</button></center></td>
+                    </tr>
+                </table>
             </form>
+            <h4 style="text-align: center">Wróć do <a th:href="@{/}">strony głównej</a></h4>
         </div>
         <div style="text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: small; background: rgb(253, 204, 164);">
             Wykonanie 2023 Anna Drobek & Radosław Biereta
