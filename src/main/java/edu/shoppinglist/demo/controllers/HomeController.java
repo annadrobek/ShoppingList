@@ -55,7 +55,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("list") ShoppingList list) {
+    public String saveList(@ModelAttribute("list") ShoppingList list) {
         service.saveOrUpdate(list);
         return "redirect:/";
     }
