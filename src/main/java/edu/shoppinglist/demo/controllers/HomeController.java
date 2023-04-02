@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -90,5 +92,25 @@ public class HomeController {
         String qrcode = Base64.getEncoder().encodeToString(image);
         model.addAttribute("qrcode", qrcode);
         return "qrcode";
+    }
+
+    @RequestMapping("/getAllLists")
+    public List<ShoppingList> showAllLists() {
+        return service.getAllLists();
+    }
+
+    @RequestMapping("/createList/{name}")
+    public ResponseEntity<String> createListAPI(@PathVariable(name = "name") String name) {
+        if (service.create(name)) {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("OK");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("ERROR");
+        }
+    }
+
+    @RequestMapping("/deleteList/{id}")
+    public ResponseEntity<String> deleteListAPI(@PathVariable(name = "id") int id) {
+        service.delete(id);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("OK");
     }
 }
