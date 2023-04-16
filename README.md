@@ -3,7 +3,7 @@
 # ShoppingList
 Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
 ```diff
--**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Linux (Debian/Ubuntu)**  
+**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Linux (Debian/Ubuntu)**  
 ```
 1) sudo apt-get update  
 2) sudo apt-get install -y openjdk-17-jre-headless maven git
@@ -17,7 +17,7 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 10) docker push annadrobek/shoppinglistdemo  
 11) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
 ```diff
--**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Windows**  
+**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Windows**  
 ```
 1) Pobierz i zainstaluj https://aka.ms/download-jdk/microsoft-jdk-17.0.6-windows-x64.msi  
 2) W celu instalacji maven wykonaj kroki z https://phoenixnap.com/kb/install-maven-windows  
@@ -34,6 +34,6 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 13) docker push annadrobek/shoppinglistdemo  
 14) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
 ```diff
--**W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe po każdym wprowadzaniu zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do**  
+**W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe po każdym wprowadzaniu zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do**  
 1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
 ```
