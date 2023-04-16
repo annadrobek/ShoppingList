@@ -4,4 +4,4 @@ WORKDIR /ShoppingList
 RUN mvn compile
 RUN mvn package
 FROM tomcat
-COPY --from=builder target/demo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=builder /ShoppingList/target/demo-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
