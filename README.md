@@ -1,3 +1,5 @@
+[![Docker Image CI & CD](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml/badge.svg)](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml)
+
 # ShoppingList
 Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
 
