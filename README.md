@@ -34,4 +34,4 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 +Akcja będzie się uruchamiać po każdym wprowadzaniu zmiany w branchu "main".
 +Wówczas proces uruchomienia aplikacji ogranicza się do
 ```
-1) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest
+1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
