@@ -1,15 +1,19 @@
 # ShoppingList
-Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot. 
-Wykonany system informatyczny zbudowany będzie w oparciu o framework thymeleaf.
+Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK.  
 
-Instrukcja uruchomienia Aplikacji ShoppingList
+Instrukcja uruchomienia Aplikacji ShoppingList  
 
-Budowanie i osadzanie środowiska
-Budowanie ręczne obrazu Doker
-Do budowania ręcznego konieczne jest posiadanie środowiska docker. 
-Aby zbudować obraz dockerowy należy uruchomić polecenie
-docker build . --file Dockerfile --tag annadrobek/ShoppingList:latest
-a następnie
-docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-aby finalnie móc wykonać polecenie
-docker push annadrobek/ShoppingList:latest
+1) sudo apt-get update  
+2) sudo apt-get install -y openjdk-17-jre-headless maven git
+3) rm -Rf ShoppingList  
+4) git clone https://github.com/annadrobek/ShoppingList.git  
+5) cd ShoppingList  
+6) mvn compile  
+7) mvn pacakge  
+8) docker build -t annadrobek/shoppinglistdemo .  
+9) docker login -u annadrobek --password-stdin  
+10) docker push annadrobek/shoppinglistdemo  
+11) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
+
+W celu optymlizacji procesu została zdefiniowana akcja GitHub wykonująca powyższe kroki za każdym razem jak będą wprowadzane zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do  
+1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
