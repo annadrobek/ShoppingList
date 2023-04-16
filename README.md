@@ -1,5 +1,5 @@
 # ShoppingList
-Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK.  
+Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
 
 Instrukcja uruchomienia Aplikacji ShoppingList  
 
