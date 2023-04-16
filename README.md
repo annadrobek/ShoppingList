@@ -3,7 +3,7 @@
 # ShoppingList
 Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
 
-Instrukcja uruchomienia Aplikacji ShoppingList  
+Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Linux (Debian/Ubuntu)  
 
 1) sudo apt-get update  
 2) sudo apt-get install -y openjdk-17-jre-headless maven git
