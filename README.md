@@ -12,10 +12,8 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 5) cd ShoppingList  
 6) mvn compile  
 7) mvn pacakge  
-8) docker build -t annadrobek/shoppinglistdemo .  
-9) docker login -u annadrobek --password-stdin  
-10) docker push annadrobek/shoppinglistdemo  
-11) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
+8) docker build -t shoppinglistdemo .  
+9) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest    
 ```diff
 -**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Windows**  
 ```
@@ -29,13 +27,11 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 8) cd ShoppingList  
 9) mvn compile  
 10) mvn pacakge  
-11) docker build -t annadrobek/shoppinglistdemo .  
-12) docker login -u annadrobek --password-stdin  
-13) docker push annadrobek/shoppinglistdemo  
-14) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
+11) docker build -t shoppinglistdemo .  
+12) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest    
 ```diff
 +W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe.
 +Akcja będzie się uruchamiać po każdym wprowadzaniu zmiany w branchu "main".
 +Wówczas proces uruchomienia aplikacji ogranicza się do
 ```
-1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
+1) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest
