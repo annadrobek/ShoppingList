@@ -11,7 +11,7 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 4) git clone https://github.com/annadrobek/ShoppingList.git  
 5) cd ShoppingList  
 6) mvn compile  
-7) mvn pacakge  
+7) mvn package  
 8) docker build -t shoppinglistdemo .  
 9) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest    
 ```diff
@@ -26,7 +26,7 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 7) git clone https://github.com/annadrobek/ShoppingList.git  
 8) cd ShoppingList  
 9) mvn compile  
-10) mvn pacakge  
+10) mvn package  
 11) docker build -t shoppinglistdemo .  
 12) docker run -itd -p 8080:10000 --name shoppinglist shoppinglistdemo:latest    
 ```diff
