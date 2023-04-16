@@ -8,7 +8,7 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 **Docker jest zainstalowany lokalnie
 
 ```diff
-@@ **Instrukcja uruchomienia aplikacji ShoppingList w kontenerze Docker
++Instrukcja uruchomienia aplikacji ShoppingList w kontenerze Docker
 ```
 1) docker build -t shoppinglistdemo .  
 2) docker run -itd -p 10000:8080 --name shoppinglist shoppinglistdemo:latest  
