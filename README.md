@@ -34,6 +34,8 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 13) docker push annadrobek/shoppinglistdemo  
 14) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
 ```diff
-+**W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe po każdym wprowadzaniu zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do**  
-1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
++W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe.
++Akcja będzie się uruchamiać po każdym wprowadzaniu zmiany w branchu "main".
++Wówczas proces uruchomienia aplikacji ogranicza się do
 ```
+1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
