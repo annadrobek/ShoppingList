@@ -2,9 +2,9 @@
 
 # ShoppingList
 Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
-
-**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Linux (Debian/Ubuntu)**  
-
+```diff
+-**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Linux (Debian/Ubuntu)**  
+```
 1) sudo apt-get update  
 2) sudo apt-get install -y openjdk-17-jre-headless maven git
 3) rm -Rf ShoppingList  
@@ -16,9 +16,9 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 9) docker login -u annadrobek --password-stdin  
 10) docker push annadrobek/shoppinglistdemo  
 11) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
-
-**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Windows**  
-
+```diff
+-**Instrukcja uruchomienia Aplikacji ShoppingList w środowisku Windows**  
+```
 1) Pobierz i zainstaluj https://aka.ms/download-jdk/microsoft-jdk-17.0.6-windows-x64.msi  
 2) W celu instalacji maven wykonaj kroki z https://phoenixnap.com/kb/install-maven-windows  
 3) Pobierz i zainstaluj https://github.com/git-for-windows/git/releases/download/v2.40.0.windows.1/Git-2.40.0-64-bit.exe
@@ -33,6 +33,7 @@ Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w op
 12) docker login -u annadrobek --password-stdin  
 13) docker push annadrobek/shoppinglistdemo  
 14) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest    
-
-**W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe po każdym wprowadzaniu zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do**  
+```diff
+-**W celu optymlizacji procesu została zdefiniowana akcja GitHub tworząca obrazy dockerowe po każdym wprowadzaniu zmiany w branchu "main". Wówczas proces uruchomienia aplikacji ogranicza się do**  
 1) docker run -itd -p 8080:10000 --name shoppinglist annadrobek/shoppinglistdemo:latest
+```
