@@ -1,0 +1,18 @@
+name: Docker Image CI & CD
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: tomcat
+    steps:
+    - uses: actions/checkout@v3
+    - name: Docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKERHUBUSER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKERHUBPASSWORD }}
+      run: echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag annadrobek/shoppinglistdemo:latest
+    - name: Push the Docker image
+      run: docker push annadrobek/shoppinglistdemo:latest
