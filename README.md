@@ -3,9 +3,9 @@
 # ShoppingList
 Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
 
-**Założenia wstępne tożsame dla uruchomienia aplikacji w dockerze
-**Port lokalny 10000 jest wolny
-**Docker jest zainstalowany lokalnie
+**Założenia wstępne tożsame dla uruchomienia aplikacji w dockerze  
+**Port lokalny 10000 jest wolny  
+**Docker jest zainstalowany lokalnie  
 
 ```diff
 +Instrukcja uruchomienia aplikacji ShoppingList w kontenerze Docker
