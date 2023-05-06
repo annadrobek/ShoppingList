@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>Formularz logowania</title>
+    <link rel="stylesheet" href="style_login.css" />
+  </head>
+  <body>
+    <div style="
+        background: rgb(253, 204, 164);
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: x-large;
+        font-weight: bolder;
+    ">
+      <span style="text-decoration: underline" th:text="${appFullName}"
+        >Planowanie zakupów z wyprzedzeniem<br />jako klucz do strategii.<br /><br
+      /></span>
+      <img src="ShoppingList_Logo.png" alt="Logo Shopping List" width="150" height="75" />
+    </div>
+    <div class="login-container">
+      <h1>Logowanie</h1>
+      <h4>Zaloguj się</h4>
+      <br />
+      <form action="login.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Zaloguj się</button>
+      </form>
+      <h4 style="text-align: center">
+        <a href="home.html">Wróć do strony głównej</a>
+      </h4>
+    </div>
+    <div style="
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: small;
+        background: rgb(253, 204, 164);
+    ">
+      <p>© 2023 Wykonanie: Anna Drobek & Radosław Biereta</p>
+    </div>
+  </body>
+</html>
