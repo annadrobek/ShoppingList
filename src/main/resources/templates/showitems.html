@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Pokaż listę</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <div style="background: rgb(253, 204, 164);width: 100%;height: auto;text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: x-large; font-weight: bolder">
+        Planowanie zakupów z wyprzedzeniem</br>jako klucz do strategii.</br></br><span style="text-decoration: underline;" th:text="${appFullName}"></span>
+    </div>
+    <div align="center">
+        <h1>Zawartość listy</h1>
+        <div>
+            <table th:object="${itemsOnList}" border="1">
+                <tr>
+                    <td>Nazwa przedmiotu</td>
+                    <td>Ilość</td>
+                </tr>
+                <tr th:each="item :${itemsOnList}">
+                    <td  th:text="${item.getName()}"></td>
+                    <td  th:text="${item.getCount()}"></td>
+                </tr>
+            </table>
+        </div>
+        </br>
+        </br>
+    </div>
+    <div style="text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: small; background: rgb(253, 204, 164);">
+        Wykonanie 2023 Anna Drobek & Radosław Biereta
+    </div>
+</body>
+</html>

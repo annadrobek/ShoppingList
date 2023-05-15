@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html>
     <head>
         <link rel="stylesheet" th:href="@{/css/style.css}" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,33 +8,34 @@
             Planowanie zakupów z wyprzedzeniem</br>jako klucz do strategii.</br></br><span style="text-decoration: underline;" th:text="${appFullName}"></span>
         </div>
         <div align="center">
-            <h1>Edytuj listę</h1>
+            <h1>Dodaj przedmiot do listy numer <span th:text="${list_id}"></span></h1>
+            <h4>podaj wymagane parametry dodawanego przedmiotu (ID listy, nazwę oraz ilość)</h4>
             <br />
-            <h4 style="text-align: center">Aby zmienić nazwę listy wpisz nową nazwę</h4>
-            <form action="#" th:action="@{/update}" th:object="${list}"
+            <form action="#" th:action="@{/saveItem}" th:object="${item}"
                   method="post">
                 <table border="0" cellpadding="10">
-                    <tr>             
-                        <td>ID Listy:</td>
-                        <td>
-                            <input type="text" th:field="*{id}" readonly="readonly" />
-                        </td>
-                    </tr>        
-                    <tr>             
-                        <td>Nazwa listy:</td>
-                        <td>
-                            <input type="text" th:field="*{name}" />
-                        </td>
+                    <tr>
+                        <td>ID Listy</td>
+                <td>
+                        <input type="text" th:field="*{list_id}"/>
+                    </td>
+                    <tr>
+                        <td>Nazwa:</td>
+                        <td><input type="text" th:field="*{name}" /></td>
+                    </tr>
+                    <tr>
+                        <td>Ilosc:</td>
+                        <td><input type="text" th:field="*{count}" /></td>
                     </tr>
                     <tr>
                         <td colspan="2"><center><button type="submit">Zapisz</button></center></td>
                     </tr>
                 </table>
             </form>
-            <h4 style="text-align: center">Aby dodać przedmiot do listy kliknij <a th:href="@{additemtolist/add(list_id=${id})}">-->TU<--</a></h4>
         </div>
         <div style="text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: small; background: rgb(253, 204, 164);">
             Wykonanie 2023 Anna Drobek & Radosław Biereta
         </div>
-    </body>
+    </form>
+</body>
 </html>

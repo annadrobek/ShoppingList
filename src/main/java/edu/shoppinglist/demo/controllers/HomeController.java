@@ -1,21 +1,29 @@
 package edu.shoppinglist.demo.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
+import edu.shoppinglist.demo.merchandise.Item;
 import edu.shoppinglist.demo.merchandise.ShoppingList;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -24,6 +32,9 @@ public class HomeController {
 
     @Autowired
     private ListOperationService service;
+    @Autowired
+    @Qualifier("ItemService")
+    private ItemOperationService ee;
 
     @Value("${spring.application.name}")
     String appName;
@@ -112,5 +123,37 @@ public class HomeController {
     public ResponseEntity<String> deleteListAPI(@PathVariable(name = "id") int id) {
         service.delete(id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("OK");
+    }
+
+    @RequestMapping("/edit/additemtolist/add")
+    public String additem(@RequestParam("list_id") int id, Model model) {
+        model.addAttribute("list_id", id);
+        Item item = new Item();
+        model.addAttribute("item", item);
+        return "additem";
+    }
+
+    @RequestMapping(value = "/saveItem", method = RequestMethod.POST)
+    public String saveItem(@ModelAttribute("item") Item item) {
+        ee.save(item);
+        return "redirect:/";
+    }
+
+    @RequestMapping("/getAllItemsOnListById/{id}")
+    public String showAllItemsOnListById(@PathVariable(name = "id") int id, Model model) {
+        model.addAttribute("itemsOnList", ee.getAllItemsOnList(id));
+        return "showitems";
+    }
+
+    @GetMapping(path = "/getAllItemsOnListByIdJSON/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<JsonNode> get(@PathVariable(name = "id") int id) throws JsonProcessingException {
+        List<Item> items = new ArrayList<>();
+        items = ee.getAllItemsOnList(id);
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode json = null;
+        for (int i = 0; i < items.size(); i++) {
+            json = mapper.readTree("{\"item_name\":\"" + items.get(i).getName() + "\",\"item_count\":\"" + items.get(i).getCount() + "\"}");
+        }
+        return ResponseEntity.ok(json);
     }
 }
