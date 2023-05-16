@@ -31,6 +31,8 @@
                         <td th:text="${lists.creationDate}">Data utworzenia</td>
                         <td th:text="${lists.modifyDate}">Data modyfikacji</td>
                         <td>
+                            <a th:href="@{'/getAllItemsOnListById/'+${lists.id}}">Pokaż listę</a>
+                            &nbsp;&nbsp;&nbsp;
                             <a th:href="@{'/showQR/'+${lists.id}}">Pokaż kod QR</a>
                             &nbsp;&nbsp;&nbsp;
                             <a th:href="@{'/edit/'+${lists.id}}">Edytuj</a>
