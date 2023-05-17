@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
-        <img th:src="${'data:image/png;base64,' + qrcode}" alt="" height="250" width="250">
+        <div style="background: rgb(253, 204, 164);width: 100%;height: auto;text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: x-large; font-weight: bolder">
+            Planowanie zakupów z wyprzedzeniem</br>jako klucz do strategii.</br></br><span style="text-decoration: underline;" th:text="${appFullName}"></span>
+        </div>
+        <div align="center">
+            <h4>Zeskanuj ten kod QR za pomocą dedykowanej aplikacji AndroidShoppingList</h4>
+            <h5>aby skorzystać z listy na urządzeniu mobilnym</h5>
+            <img th:src="${'data:image/png;base64,' + qrcode}" alt="" height="250" width="250">
+        </div>
+        <div style="text-align: center;padding-top: 25px; padding-bottom: 25px; font-size: small; background: rgb(253, 204, 164);">
+            Wykonanie 2023 Anna Drobek & Radosław Biereta
+        </div>
     </body>
 </html>

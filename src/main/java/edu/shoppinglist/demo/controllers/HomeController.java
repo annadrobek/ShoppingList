@@ -1,13 +1,12 @@
 package edu.shoppinglist.demo.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.zxing.WriterException;
 import edu.shoppinglist.demo.merchandise.Item;
 import edu.shoppinglist.demo.merchandise.ShoppingList;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +34,7 @@ public class HomeController {
     private ListOperationService service;
     @Autowired
     @Qualifier("ItemService")
-    private ItemOperationService ee;
+    private ItemOperationService itemservice;
 
     @Value("${spring.application.name}")
     String appName;
@@ -95,9 +95,19 @@ public class HomeController {
 
     @RequestMapping("/showQR/{id}")
     public String showQR4List(@PathVariable(name = "id") int id, Model model) {
+        Gson gson = new Gson();
+        List<Item> items = itemservice.getAllItemsOnList(id);
+        JsonObject jsonRequest = new JsonObject();
+        JsonArray jsonArray = new JsonArray();
+        for (int i = 0; i < items.size(); i++) {
+            jsonRequest.addProperty("item_name", items.get(i).getName());
+            jsonRequest.addProperty("item_count", items.get(i).getCount());
+            jsonArray.add(jsonRequest);
+        }
+        String jsonInString = gson.toJson(jsonArray);
         byte[] image = new byte[0];
         try {
-            image = QRCodeGenerator.getQRCodeImage(String.valueOf(id), 250, 250);
+            image = QRCodeGenerator.getQRCodeImage(String.valueOf(jsonInString), 250, 250);
         } catch (WriterException | IOException e) {
         }
         String qrcode = Base64.getEncoder().encodeToString(image);
@@ -135,25 +145,28 @@ public class HomeController {
 
     @RequestMapping(value = "/saveItem", method = RequestMethod.POST)
     public String saveItem(@ModelAttribute("item") Item item) {
-        ee.save(item);
+        itemservice.save(item);
         return "redirect:/";
     }
 
     @RequestMapping("/getAllItemsOnListById/{id}")
     public String showAllItemsOnListById(@PathVariable(name = "id") int id, Model model) {
-        model.addAttribute("itemsOnList", ee.getAllItemsOnList(id));
+        model.addAttribute("itemsOnList", itemservice.getAllItemsOnList(id));
         return "showitems";
     }
 
     @GetMapping(path = "/getAllItemsOnListByIdJSON/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<JsonNode> get(@PathVariable(name = "id") int id) throws JsonProcessingException {
-        List<Item> items = new ArrayList<>();
-        items = ee.getAllItemsOnList(id);
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode json = null;
+    public ResponseEntity<String> get(@PathVariable(name = "id") int id) throws JSONException {
+        Gson gson = new Gson();
+        List<Item> items = itemservice.getAllItemsOnList(id);
+        JsonObject jsonRequest = new JsonObject();
+        JsonArray jsonArray = new JsonArray();
         for (int i = 0; i < items.size(); i++) {
-            json = mapper.readTree("{\"item_name\":\"" + items.get(i).getName() + "\",\"item_count\":\"" + items.get(i).getCount() + "\"}");
+            jsonRequest.addProperty("item_name", items.get(i).getName());
+            jsonRequest.addProperty("item_count", items.get(i).getCount());
+            jsonArray.add(jsonRequest);
         }
-        return ResponseEntity.ok(json);
+        String jsonInString = gson.toJson(jsonArray);
+        return ResponseEntity.ok(jsonInString);
     }
 }
