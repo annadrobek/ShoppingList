@@ -73,6 +73,12 @@
 	  <version>2.8.6</version>
 	  <type>jar</type>
 	 </dependency>
+	 <dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-configuration-processor</artifactId>
+          <scope>runtime</scope>
+	  <version>2.5.9</version>
+	 </dependency>
 	</dependencies>
 
 	<build>
