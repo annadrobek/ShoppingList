@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -156,7 +155,7 @@ public class HomeController {
     }
 
     @GetMapping(path = "/getAllItemsOnListByIdJSON/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> get(@PathVariable(name = "id") int id) throws JSONException {
+    public ResponseEntity<String> get(@PathVariable(name = "id") int id) {
         Gson gson = new Gson();
         List<Item> items = itemservice.getAllItemsOnList(id);
         JsonObject jsonRequest = new JsonObject();
