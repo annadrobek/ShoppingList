@@ -1,7 +1,29 @@
-[![Docker Image CI & CD](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml/badge.svg)](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml)
+# :shopping_cart:ShoppingList:shopping:
+*Projekt systemu informatycznego na zaliczenie laboratorium*
 
-# ShoppingList
-Projekt systemu informatycznego na zaliczenie laboratorium został wykonany w oparciu o aplikacje napisane w Java SpringBoot z Thymeleaf oraz Android SDK w części aplikacji mobilej na telefony z systemem Android.  
+![Logo aplikacji](https://github.com/RadoslawBiereta/ShoppingListByADRB/blob/main/ShoppinList.jpg)
+
+## 1. Opis projektu
+- Projekt ShoppingListB to aplikacja webowa napisana w języku Java z użyciem HTML i CSS.
+Projekt ten umożliwia tworzenie list zakupów i dodawanie do nich produktów za pomocą przeglądarki internetowej. Ponadto projekt zawiera aplikację mobilną będącą jednocześnie terminalem służącym do obsługi stworzonej listy zakupowych w aplikacji internetowej.
+## 2. Wymagania
+- Java 8 lub nowsza
+- Maven
+## 3. Technologie
+- Java / Spring Boot / Thymeleaf
+- HTML
+- CSS
+- Android SDK
+## 4. Diagram komponentów
+![diagram komponentów](https://github.com/RadoslawBiereta/ShoppingListByADRB/blob/main/diagram_komponentow.jpg)
+## 5. Funkcjonalności
+- Tworzenie nowych list zakupów
+- Dodawanie przedmiotów do listy zakupów
+- Przeglądanie list zakupów
+- Usuwanie listy zakupów
+- Udostępnianie list zakupów poprzez kod QR
+## 6. Instrukcja instalacji i konfiguracji
+[![Docker Image CI & CD](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml/badge.svg)](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml)
 
 **Założenia wstępne tożsame dla uruchomienia aplikacji w dockerze  
 **Port lokalny 10000 jest wolny  
