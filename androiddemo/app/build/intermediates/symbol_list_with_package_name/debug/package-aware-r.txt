@@ -2043,12 +2043,14 @@ color primary_text_disabled_material_light
 color purple_200
 color purple_500
 color purple_700
+color qrcode_scan_background
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color shoppingwebcolor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -3024,9 +3026,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable qrcode_scan_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font coffecake
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3730,6 +3734,9 @@ layout zxing_barcode_scanner
 layout zxing_capture
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap qrcode_scan
+mipmap qrcode_scan_foreground
+mipmap qrcode_scan_round
 plurals mtrl_badge_content_description
 raw zxing_beep
 string abc_action_bar_home_description
