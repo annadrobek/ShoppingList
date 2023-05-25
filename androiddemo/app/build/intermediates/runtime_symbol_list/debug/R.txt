@@ -2042,12 +2042,14 @@ int color primary_text_disabled_material_light 0x7f0502d6
 int color purple_200 0x7f0502d7
 int color purple_500 0x7f0502d8
 int color purple_700 0x7f0502d9
+int color qrcode_scan_background 0x7f0502f6
 int color ripple_material_dark 0x7f0502da
 int color ripple_material_light 0x7f0502db
 int color secondary_text_default_material_dark 0x7f0502dc
 int color secondary_text_default_material_light 0x7f0502dd
 int color secondary_text_disabled_material_dark 0x7f0502de
 int color secondary_text_disabled_material_light 0x7f0502df
+int color shoppingwebcolor 0x7f0502f5
 int color switch_thumb_disabled_material_dark 0x7f0502e0
 int color switch_thumb_disabled_material_light 0x7f0502e1
 int color switch_thumb_material_dark 0x7f0502e2
@@ -3023,9 +3025,11 @@ int drawable notification_template_icon_bg 0x7f0700d8
 int drawable notification_template_icon_low_bg 0x7f0700d9
 int drawable notification_tile_bg 0x7f0700da
 int drawable notify_panel_notification_icon_bg 0x7f0700db
+int drawable qrcode_scan_background 0x7f0700df
 int drawable test_level_drawable 0x7f0700dc
 int drawable tooltip_frame_dark 0x7f0700dd
 int drawable tooltip_frame_light 0x7f0700de
+int font coffecake 0x7f140000
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
@@ -3729,6 +3733,9 @@ int layout zxing_barcode_scanner 0x7f0b006a
 int layout zxing_capture 0x7f0b006b
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
+int mipmap qrcode_scan 0x7f0d0002
+int mipmap qrcode_scan_foreground 0x7f0d0003
+int mipmap qrcode_scan_round 0x7f0d0004
 int plurals mtrl_badge_content_description 0x7f0e0000
 int raw zxing_beep 0x7f0f0000
 int string abc_action_bar_home_description 0x7f100000
