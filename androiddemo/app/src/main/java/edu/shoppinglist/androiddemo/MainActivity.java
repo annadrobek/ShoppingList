@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -13,6 +14,10 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Anulowano skanowanie", Toast.LENGTH_LONG).show();
             } else {
                 String contents = data.getStringExtra("SCAN_RESULT");
-                shoppinglist.setText(contents+"\n\n\nUdanych zakupów!");
+                Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/CoffeCake.ttf");
+                shoppinglist.setTypeface(tf);
+                shoppinglist.setText(contents + "\n\n\nUdanych zakupów!");
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
