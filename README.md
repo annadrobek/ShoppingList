@@ -21,8 +21,21 @@ Projekt ten umożliwia tworzenie list zakupów i dodawanie do nich produktów za
 - Dodawanie przedmiotów do listy zakupów
 - Przeglądanie list zakupów
 - Usuwanie listy zakupów
-- Udostępnianie list zakupów poprzez kod QR
-## 6. Instrukcja instalacji i konfiguracji
+- Udostępnianie list zakupów poprzez kod QR na aplikację mobilną
+## 6. Przykład użycia - instrukcja Użytkownika
+![Przykłąd użycia aplikacji](https://github.com/RadoslawBiereta/ShoppingListByADRB/blob/main/ShoppingList.png)
+1.	Kliknij na przycisk ***Stwórz listę*** a następnie podaj nazwę listy.
+2.	Kliknij ***Zapisz***.
+3.	Kliknij przycisk ***Edytuj listę***, a następnie dodaj przedmiot do wybranej listy podając nazwę i ilość produktu.
+4.	Jeśli chcesz zobaczyć gotową listę kliknij przycisk ***Pokaż listę***.
+5.	Jeśli nie potrzebujesz listy kliknij przycisk ***Usuń listę***.
+6.	Jeśli chcesz wziąć listę ze sobą na telefonie komórkowym z systemem Android - kliknij przycisk ***Pokaż kod QR***, a następnie zeskanuj aplikacją mobilną ShoppingList kod QR wyświetlany na monitorze komputera. 
+
+## 7. Aplikacja mobilna
+Nasza aplikacja mobilna na system  Android umożliwia skanowanie kodów QR z aplikacji internetowej i aktualizowanie listy zakupów na podstawie odczytanego kodu w narzędziu mobilnym.
+
+![Aplikacja mobilna Android](https://github.com/RadoslawBiereta/ShoppingListByADRB/blob/main/mobile_app.png)
+## 8. Instrukcja instalacji i konfiguracji
 [![Docker Image CI & CD](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml/badge.svg)](https://github.com/annadrobek/ShoppingList/actions/workflows/main.yml)
 
 **Założenia wstępne tożsame dla uruchomienia aplikacji w dockerze  
